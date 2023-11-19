@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Experimantal Chatbot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+</head>
+<body>
+    <h1>Experimantal Chatbot</h1>
+    <h2>Tip:<br>Press the mic button to record, <br>then wait for process to complete</h2>
+    <br>
+
+    {% for message in get_flashed_messages() %}
+    <p id="p2">{{ message }}</p>
+    {% endfor %}
+    
+    <div id="chat-container" class="scrollable-container">
+        {% for message in chat_messages %}
+            <p>{{ message['content'] }}</p>
+        {% endfor %}
+    </div>
+    
+
+    <form action="LLMEXP" method="post"><br>
+
+        <textarea placeholder="Ask anything!" name="user_input" maxlength="256" required> </textarea>
+        <button type="submit" id="generate" class="btn">
+            <i class="fa fa-paper-plane"></i>
+        </button>
+        <button type="submit" id="record" class="btn1" name="record_audio">
+            <i class="fa fa-microphone"></i>
+        </button>
+    </form>
+
+    <script>
+        var chatContainer = document.getElementById("chat-container");
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+    </script>
+</body>
+</html>
