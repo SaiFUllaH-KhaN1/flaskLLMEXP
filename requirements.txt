@@ -111,7 +111,7 @@ tzlocal==5.1
 urllib3==1.26.13
 validators==0.20.0
 watchdog==3.0.0
-werkzeug==3.0.1
+werkzeug==2.2.3
 wrapt==1.14.1
 xyzservices==2023.10.1
 yarl==1.9.2
