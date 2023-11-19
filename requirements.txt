@@ -59,7 +59,6 @@ marshmallow==3.19.0
 mdurl==0.1.2
 multidict==6.0.4
 mypy-extensions==1.0.0
-numpy==1.24.0
 oauthlib==3.2.2
 openai==0.28.1
 openpyxl==3.0.10
