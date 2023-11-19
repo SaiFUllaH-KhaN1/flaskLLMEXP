@@ -113,6 +113,6 @@ validators==0.20.0
 watchdog==3.0.0
 werkzeug==2.2.3
 wrapt==1.14.1
-xyzservices==2023.10.1
+xyzservices==2023.2.0
 yarl==1.9.2
 zipp==3.11.0
