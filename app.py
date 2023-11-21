@@ -1,5 +1,4 @@
 import pyttsx3
-import base64
 import soundfile as sf
 from langchain.chains.conversation.memory import ConversationBufferMemory
 from langchain.agents import ZeroShotAgent, Tool, AgentExecutor
@@ -8,11 +7,13 @@ from langchain.chains import ConversationChain
 from langchain.chains.conversation.memory import ConversationEntityMemory
 from langchain.chains.conversation.prompt import ENTITY_MEMORY_CONVERSATION_TEMPLATE
 from langchain.chains import LLMChain
+# for serpapi
 from langchain.agents import initialize_agent, Tool, load_tools, AgentType
 import speech_recognition as sr
 from io import BytesIO
 # Initialize any API keys that are needed
 import os
+from pydantic import BaseModel, model_validator
 from flask import Flask, render_template, request, session, flash, get_flashed_messages
 
 os.environ["HUGGINGFACEHUB_API_TOKEN"] = "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"
@@ -63,6 +64,12 @@ def llmexp():
         else:
             user_message = {'role': 'user', 'content': f"User: {user_input}"}
             session['chat_messages'].append(user_message)
+
+            # Use @model_validator instead of @root_validator
+            @model_validator(pre=False, skip_on_failure=True)
+            def your_validator_method(cls, values):
+                # No additional validation logic is needed for this example
+                pass
 
             prompt_output = conversation(user_input)
             response = f"{prompt_output['response']}"
