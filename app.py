@@ -1,9 +1,6 @@
 import pyttsx3
 import soundfile as sf
 from langchain.llms import HuggingFaceHub
-from langchain.chains import ConversationChain
-from langchain.chains.conversation.memory import ConversationEntityMemory
-from langchain.chains.conversation.prompt import ENTITY_MEMORY_CONVERSATION_TEMPLATE
 import speech_recognition as sr
 # Initialize any API keys that are needed
 import os
