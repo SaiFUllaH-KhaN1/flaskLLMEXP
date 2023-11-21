@@ -1,4 +1,4 @@
-import pyttsx3
+#import pyttsx3
 import soundfile as sf
 from langchain.llms import HuggingFaceHub
 import speech_recognition as sr
@@ -9,21 +9,21 @@ from flask import Flask, render_template, request, session, flash, get_flashed_m
 os.environ["HUGGINGFACEHUB_API_TOKEN"] = "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"
 
 ###pytts###
-def text_to_speech(text):
+# def text_to_speech(text):
 
-    voice_dict = {'Male': 0, 'Female': 1}
-    code = voice_dict['Male']
+#     voice_dict = {'Male': 0, 'Female': 1}
+#     code = voice_dict['Male']
 
-    engine = pyttsx3.init()
-    engine.setProperty('rate', 125)
-    engine.setProperty('volume', 0.8)
-    voices = engine.getProperty('voices')
-    engine.setProperty('voice', voices[code].id)
+#     engine = pyttsx3.init()
+#     engine.setProperty('rate', 125)
+#     engine.setProperty('volume', 0.8)
+#     voices = engine.getProperty('voices')
+#     engine.setProperty('voice', voices[code].id)
 
-    #engine.say(text)
-    #engine.runAndWait()
+#     #engine.say(text)
+#     #engine.runAndWait()
 
-    return text
+#     return text
     
 app = Flask(__name__)
 app.secret_key = '123'
@@ -54,7 +54,7 @@ def llmexp():
             if not response.strip():
                 response = "I didn't understand the question."
 
-            text_to_speech(response)
+            #text_to_speech(response)
             
             assistant_message = {'role': 'assistant', 'content': f"Bot: {response}"}
             session['chat_messages'].append(assistant_message)
