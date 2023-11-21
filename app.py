@@ -87,8 +87,6 @@ def llmexp():
 
     return render_template("index.html", chat_messages=session['chat_messages'])
 
-if __name__ == "__main__":
-    app.run(debug=True)
 
 
 
