@@ -58,15 +58,17 @@ def llmexp():
             user_message = {'role': 'user', 'content': f"User: {user_input}"}
             session['chat_messages'].append(user_message)
 
+            prompt_output = conversation(user_input)
+            response = f"{prompt_output['response']}"
+
             if not response.strip():
                 response = "I didn't understand the question."
 
             text_to_speech(response)
+            
             assistant_message = {'role': 'assistant', 'content': f"Bot: {response}"}
             session['chat_messages'].append(assistant_message)
 
             session.modified = True
 
     return render_template("index.html", chat_messages=session['chat_messages'])
-
-    
