@@ -13,7 +13,6 @@ from langchain.chains import LLMChain
 from langchain.utilities import SerpAPIWrapper
 from langchain.agents import initialize_agent, Tool, load_tools, AgentType
 import speech_recognition as sr
-from gtts import gTTS
 from io import BytesIO
 # Initialize any API keys that are needed
 import os
