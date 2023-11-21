@@ -1,4 +1,3 @@
-import tempfile
 import pyttsx3
 import base64
 import soundfile as sf
@@ -13,7 +12,6 @@ from langchain.chains import LLMChain
 # for serpapi
 from langchain.utilities import SerpAPIWrapper
 from langchain.agents import initialize_agent, Tool, load_tools, AgentType
-from scipy.io.wavfile import write
 import speech_recognition as sr
 from gtts import gTTS
 from io import BytesIO
