@@ -1,7 +1,6 @@
 import pyttsx3
 import base64
 import soundfile as sf
-from langchain.utilities import GoogleSearchAPIWrapper
 from langchain.chains.conversation.memory import ConversationBufferMemory
 from langchain.agents import ZeroShotAgent, Tool, AgentExecutor
 from langchain.llms import HuggingFaceHub
@@ -9,8 +8,6 @@ from langchain.chains import ConversationChain
 from langchain.chains.conversation.memory import ConversationEntityMemory
 from langchain.chains.conversation.prompt import ENTITY_MEMORY_CONVERSATION_TEMPLATE
 from langchain.chains import LLMChain
-# for serpapi
-from langchain.utilities import SerpAPIWrapper
 from langchain.agents import initialize_agent, Tool, load_tools, AgentType
 import speech_recognition as sr
 from io import BytesIO
@@ -19,9 +16,6 @@ import os
 from flask import Flask, render_template, request, session, flash, get_flashed_messages
 
 os.environ["HUGGINGFACEHUB_API_TOKEN"] = "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"
-os.environ["SERPAPI_API_KEY"] = "0d56502616fe726d2ff1e05ea77e07a82b81efdc0edcf7b20817ffa9743e5fff"
-os.environ["GOOGLE_API_KEY"] = "AIzaSyCXy5UyblWsvsihn1lNGADcQ1VvEMybg3U"
-os.environ["GOOGLE_CSE_ID"] = "f593e7f828a66424f"
 
 ###pytts###
 def text_to_speech(text):
