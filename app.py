@@ -35,13 +35,7 @@ def llmexp():
     if 'chat_messages' not in session:
         session['chat_messages'] = []
 
-    llms = HuggingFaceHub(repo_id="google/flan-ul2", model_kwargs={"temperature": 0.1, "max_length": 256})
-    conversation = ConversationChain(
-        llm=llms,
-        memory=ConversationEntityMemory(k=5, llm=llms),
-        prompt=ENTITY_MEMORY_CONVERSATION_TEMPLATE,
-        verbose=True
-    )
+    conversation = HuggingFaceHub(repo_id="google/flan-ul2", model_kwargs={"temperature": 0.1, "max_length": 256})
 
     if request.method == 'POST':
         if 'record_audio' in request.form:
@@ -58,8 +52,7 @@ def llmexp():
             user_message = {'role': 'user', 'content': f"User: {user_input}"}
             session['chat_messages'].append(user_message)
 
-            prompt_output = conversation(user_input)
-            response = f"{prompt_output['response']}"
+            response = conversation(user_input)
 
             if not response.strip():
                 response = "I didn't understand the question."
@@ -72,3 +65,6 @@ def llmexp():
             session.modified = True
 
     return render_template("index.html", chat_messages=session['chat_messages'])
+
+
+    
