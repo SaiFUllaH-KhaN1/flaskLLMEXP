@@ -32,7 +32,7 @@ def llmexp():
     if 'chat_messages' not in session:
         session['chat_messages'] = []
 
-    conversation = HuggingFaceHub(repo_id="google/flan-t5-basic", model_kwargs={"temperature": 0.1, "max_length": 256})
+    conversation = HuggingFaceHub(repo_id="google/flan-t5-base", model_kwargs={"temperature": 0.1, "max_length": 256})
 
     if request.method == 'POST':
         if 'record_audio' in request.form:
