@@ -40,7 +40,7 @@ textarea:focus{border: solid 3px gold; outline: none;}
 #record:hover{background-color:gold ; color:rgb(0, 0, 0);cursor: pointer; }
 
 /* Media Query for smaller screens */
-@media only screen and (max-width: 481px) {
+@media only screen and (max-width: 720px) {
     #chat-container {
         width: 90%;
         height: 60%;
