@@ -7,7 +7,8 @@ form {
     align-items:self-end;
 }
 p{color: rgb(0, 0, 0); font-family: cursive;font-size: 1.2em; margin: 10px;}
-h1{color: aliceblue; font-size: larger; align-items: center;}
+#p2{color: red; background-color:aliceblue;text-align: center;top: 50%; left: 50%;}
+h1{color: aliceblue; font-size: larger; align-items: center;font-family:Arial;}
 h2{position: fixed; bottom: 0; right: 4%;color: aliceblue; font-size: medium; align-items: center;}
 
 #chat-container{position: fixed; top: 8%;border: 2px black; border-radius: 10px;
@@ -37,3 +38,40 @@ textarea:focus{border: solid 3px gold; outline: none;}
 #generate:hover{background-color:gold ; color:rgb(0, 0, 0);cursor: pointer; }
 #record{right: 19%; background-color: rgb(127, 172, 255);color: rgb(0, 0, 0);width: 5%;}
 #record:hover{background-color:gold ; color:rgb(0, 0, 0);cursor: pointer; }
+
+/* Media Query for smaller screens */
+@media only screen and (max-width: 481px) {
+    #chat-container {
+        width: 90%;
+        height: 60%;
+        top: 15%;
+    }
+
+    textarea {
+        left: 5%;
+        width: 80%;
+        height: 10%;
+        bottom: 5%;
+    }
+
+    #generate{
+        right: 6.5%;
+        width: 5%;
+        bottom: 7%;
+    }
+    #record {
+        right: 1%;
+        width: 5%;
+        bottom: 7%;
+    }
+    h2 {
+    position: fixed;
+    bottom: 0;
+    left: 5%;
+    color: aliceblue;
+    font-size: small;
+    }
+    h2 br {
+        display: none; /* Hide <br> on smaller screens */
+    }
+}
