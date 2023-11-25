@@ -49,6 +49,15 @@
 
             recognition.start();
         }
+        function textToSpeech(text) {
+            var utterance = new SpeechSynthesisUtterance(text);
+            speechSynthesis.speak(utterance);
+        }
+
+        // Call this function to trigger text-to-speech for the bot's response
+        function speakBotResponse(response) {
+            textToSpeech(response);
+        }
     </script>
 </body>
 </html>
