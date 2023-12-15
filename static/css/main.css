@@ -6,20 +6,21 @@ form {
     flex-direction:row;
     align-items:self-end;
 }
-p{color: rgb(0, 0, 0); font-family: cursive;font-size: 1.2em; margin: 10px;}
+p{color: rgb(0, 0, 0); font-family: 'Times New Roman';font-size: 1.3em; margin: 10px;}
 #p2{color: red; background-color:aliceblue;text-align: center;top: 50%; left: 50%;}
 h1{color: aliceblue; font-size: larger; align-items: center;font-family:Arial;}
 h2{position: fixed; bottom: 0; right: 4%;color: aliceblue; font-size: medium; align-items: center;}
 
 #chat-container{position: fixed; top: 8%;border: 2px black; border-radius: 10px;
-margin-bottom: 10px ; width: 60%;height: 60%; overflow-y:auto; padding: 10px; font-family: cursive;text-align: center;
-background-color: rgb(194, 194, 194); font-size: 1.2em;}
+margin-bottom: 10px ; width: 60%;height: 75%; overflow-y:auto; padding: 10px; font-family: 'Times New Roman';text-align: justify;
+background-color: rgb(110, 178, 255); font-size: 1.3em;}
 
-textarea{position: fixed; 
-bottom: 15%; left:19%;
-margin-bottom: 10px ; width: 50%;height: 5%;margin: 10px;border: none; border-radius: 10px;font-family: cursive;text-align: center;
-font-size: 1.2em;}
-textarea:focus{border: solid 3px gold; outline: none;}
+textarea{position: fixed;
+bottom: 14.5%; left:19%;
+margin-bottom: 10px ; width: 50%;height: 5%;margin: 10px;border: solid 3px black; border-radius: 10px;font-family: 'Times New Roman';text-align: center;
+font-size: 1.3em;}
+textarea:focus{border: solid 3px rgb(236, 201, 0); outline: none;}
+
 #generate,
 #record {
     position: fixed;
@@ -27,42 +28,42 @@ textarea:focus{border: solid 3px gold; outline: none;}
     width: 50%;
     height: 5%;
     margin: 10px;
-    border: none;
+    border: solid 2px black;
     border-radius: 10px;
-    font-family: cursive;
+    font-family: 'Times New Roman';
     text-align: center;
-    font-size: 1em;
+    font-size: 1.2em;
 }
 
-#generate{right: 24%;background-color: rgb(127, 172, 255);color: rgb(0, 0, 0);width: 5%;}
+#generate{right: 23.6%;background-color: rgb(127, 172, 255);color: rgb(0, 0, 0);width: 5%;}
 #generate:hover{background-color:gold ; color:rgb(0, 0, 0);cursor: pointer; }
-#record{right: 19%; background-color: rgb(127, 172, 255);color: rgb(0, 0, 0);width: 5%;}
+#record{right: 18.7%; background-color: rgb(127, 172, 255);color: rgb(0, 0, 0);width: 5%;}
 #record:hover{background-color:gold ; color:rgb(0, 0, 0);cursor: pointer; }
 
 /* Media Query for smaller screens */
 @media only screen and (max-width: 1000px) {
     #chat-container {
         width: 90%;
-        height: 60%;
-        top: 15%;
+        height: 80%;
+        top: 10%;
     }
 
     textarea {
-        left: 5%;
+        left: 4%;
         width: 80%;
-        height: 10%;
-        bottom: 5%;
+        height: 7.5%;
+        bottom: 7%;
     }
 
     #generate{
-        right: 6.5%;
+        right: 8.7%;
         width: 5%;
-        bottom: 7%;
+        bottom: 9%;
     }
     #record {
-        right: 1%;
+        right: 3.8%;
         width: 5%;
-        bottom: 7%;
+        bottom: 9%;
     }
     h2 {
     position: fixed;
