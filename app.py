@@ -2,7 +2,8 @@
 import soundfile as sf
 from langchain.llms import HuggingFaceHub
 import speech_recognition as sr
-from langchain.memory import ConversationBufferMemory
+from langchain import memory
+from memory import memoryConversationBufferMemory
 # Initialize any API keys that are needed
 import os
 from flask import Flask, render_template, request, session, flash, get_flashed_messages
