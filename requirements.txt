@@ -39,7 +39,6 @@ greenlet==3.0.1
 grpcio==1.51.1
 gTTS==2.4.0
 gunicorn==21.2.0
-h5py==3.7.0
 huggingface-hub==0.16.4
 idna==3.4
 importlib-metadata==6.7.0
