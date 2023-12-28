@@ -1,30 +1,45 @@
 
+body{align-items: center; justify-content: center; text-align: center; background-color: rgb(23, 29, 112);}
 
-body{display: flex; flex-direction:row ; align-items: center; justify-content: center; background-color: rgb(1, 49, 155); text-align: center;}
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+  }
+.left{
+    width:25%;
+}
+
+.right{
+    width:75%;
+    overflow: hidden; /* Clear floats inside the container */
+}
+
+h1{position: absolute; left: 5%;top: 5%; color: aliceblue; font-size: larger; align-items: center;font-family:Arial;}
+h2{position: absolute; left: 5%;bottom: 5% ;color: aliceblue; font-size: medium; align-items: center;}
+
 form {
     display: flex;
     flex-direction:row;
     align-items:self-end;
 }
+
 p{color: rgb(0, 0, 0); font-family: 'Times New Roman';font-size: 1.3em; margin: 10px;}
 #p2{color: red; background-color:aliceblue;text-align: center;top: 50%; left: 50%;}
-h1{color: aliceblue; font-size: larger; align-items: center;font-family:Arial;}
-h2{position: fixed; bottom: 0; right: 4%;color: aliceblue; font-size: medium; align-items: center;}
 
-#chat-container{position: fixed; top: 8%;border: 2px black; border-radius: 10px;
-margin-bottom: 10px ; width: 60%;height: 75%; overflow-y:auto; padding: 10px; font-family: 'Times New Roman';text-align: justify;
-background-color: rgb(110, 178, 255); font-size: 1.3em;}
 
-textarea{position: fixed;
-bottom: 14.5%; left:19%;
-margin-bottom: 10px ; width: 50%;height: 5%;margin: 10px;border: solid 3px black; border-radius: 10px;font-family: 'Times New Roman';text-align: center;
+#chat-container{position: absolute; top: 5%; border: 2px black; border-radius: 10px;
+margin-bottom: 10px ; width: 65%;height: 75%; overflow-y:auto; padding: 10px; font-family: 'Times New Roman';text-align: justify;
+background-color: rgb(110, 178, 255); font-size: 1.3em; border: solid 2px black; border-radius: 3px;}
+
+textarea{position: absolute;
+bottom: 5%; left:25%;
+margin-bottom: 10px ; width: 55%;height: 5%;margin: 10px;border: solid 3px black; border-radius: 10px;font-family: 'Times New Roman';text-align: center;
 font-size: 1.3em;}
 textarea:focus{border: solid 3px rgb(236, 201, 0); outline: none;}
 
 #generate,
 #record {
-    position: fixed;
-    bottom: 15%;
+    bottom: 5.5%;
     width: 50%;
     height: 5%;
     margin: 10px;
@@ -35,20 +50,22 @@ textarea:focus{border: solid 3px rgb(236, 201, 0); outline: none;}
     font-size: 1.2em;
 }
 
-#generate{right: 23.6%;background-color: rgb(127, 172, 255);color: rgb(0, 0, 0);width: 5%;}
+#generate{position: absolute;right: 12.5%;background-color: rgb(127, 172, 255);color: rgb(0, 0, 0);width: 5%;}
 #generate:hover{background-color:gold ; color:rgb(0, 0, 0);cursor: pointer; }
-#record{right: 18.7%; background-color: rgb(127, 172, 255);color: rgb(0, 0, 0);width: 5%;}
+#record{position: absolute;right: 7.5%; background-color: rgb(127, 172, 255);color: rgb(0, 0, 0);width: 5%;}
 #record:hover{background-color:gold ; color:rgb(0, 0, 0);cursor: pointer; }
 
 /* Media Query for smaller screens */
 @media only screen and (max-width: 1000px) {
+    h1 {
+        top: 5%;
+    }
     #chat-container {
-        width: 90%;
-        height: 80%;
-        top: 10%;
+        border: solid 2px black;
+        border-radius: 3px;
     }
 
-    textarea {
+    /*textarea {
         left: 4%;
         width: 77%;
         height: 6%;
@@ -71,8 +88,6 @@ textarea:focus{border: solid 3px rgb(236, 201, 0); outline: none;}
     left: 5%;
     color: aliceblue;
     font-size: small;
-    }
-    h2 br {
-        display: none; /* Hide <br> on smaller screens */
-    }
+    }*/
+    
 }
