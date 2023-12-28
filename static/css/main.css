@@ -64,6 +64,7 @@ textarea:focus{border: solid 3px rgb(236, 201, 0); outline: none;}
         border: solid 2px black;
         border-radius: 3px;
         left: 29.5%;
+        height: 77%;
     }
 
     textarea {
