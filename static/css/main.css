@@ -55,7 +55,7 @@ textarea:focus{border: solid 3px rgb(236, 201, 0); outline: none;}
 #record{position: absolute;right: 7.5%; background-color: rgb(127, 172, 255);color: rgb(0, 0, 0);width: 5%;}
 #record:hover{background-color:gold ; color:rgb(0, 0, 0);cursor: pointer; }
 
-/* Media Query for smaller screens */
+/* Media Query for smaller screens , min-width is to enable PC to give mobile view */
 @media only screen and (max-width: 1000px) {
     h1 {
         top: 5%;
@@ -63,31 +63,26 @@ textarea:focus{border: solid 3px rgb(236, 201, 0); outline: none;}
     #chat-container {
         border: solid 2px black;
         border-radius: 3px;
+        left: 29.5%;
     }
 
-    /*textarea {
-        left: 4%;
-        width: 77%;
-        height: 6%;
-        bottom: 8.5%;
+    textarea {
+        left: 29%;
+
     }
 
     #generate{
-        right: 8.7%;
-        width: 5%;
-        bottom: 9%;
+        right: 8%;
     }
     #record {
-        right: 3.8%;
-        width: 5%;
-        bottom: 9%;
+        right: 3%;
     }
     h2 {
-    position: fixed;
-    bottom: 0;
-    left: 5%;
+    position: absolute;
+    bottom: 5%;
     color: aliceblue;
     font-size: small;
-    }*/
+    }
+
     
 }
