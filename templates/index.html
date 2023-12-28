@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Experimantal Chatbot</title>
+    <meta charset="UTF-8" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
 </head>
 <body>
-    <h1>Experimantal Chatbot</h1>
-    <h2>Tip:<br>Press the mic button to record, <br>then wait for Bot's <br> response automatically</h2>
-    <br>
-
-    {% for message in get_flashed_messages() %}
-    <p id="p2">{{ message }}</p>
-    {% endfor %}
-    
-    <div id="chat-container" class="scrollable-container">
-        {% for message in chat_messages %}
-            <p>{{ message['content'] }}</p>
-        {% endfor %}
+    <div class="column left" >
+        <h1>Experimantal Chatbot</h1>
+        <br>
+        <h2>Tip:<br>Press the mic button to record, <br>then wait for Bot's <br> response automatically</h2>
     </div>
-    
+    <div class="column right" >
 
-    <form id="chatForm" method="post" action="{{ url_for('llmexp') }}"><br>
-
-        <textarea id="user_input" placeholder="Ask anything!" name="user_input" maxlength="256" required> </textarea>
-        <button type="button" onclick="startRecording()" id="record"><i class="fa fa-microphone"></i></button>
-        <button type="submit" id="generate" class="btn">
-            <i class="fa fa-paper-plane"></i>
-        </button>
+        {% for message in get_flashed_messages() %}
+        <p id="p2">{{ message }}</p>
+        {% endfor %}
         
-    </form>
+        <div id="chat-container" class="scrollable-container">
+            {% for message in chat_messages %}
+                <p>{{ message['content'] }}</p>
+            {% endfor %}
+        </div>
+    
+        <form id="chatForm" method="post" action="{{ url_for('llmexp') }}"><br>
+    
+            <textarea placeholder="Ask anything..." id="user_input" name="user_input" maxlength="256" required> </textarea>
+            
+            <button type="button" onclick="startRecording()" id="record"><i class="fa fa-microphone"></i></button>
+            
+            <button type="submit" id="generate" class="btn">
+                <i class="fa fa-paper-plane"></i>
+            </button>
+            
+        </form>
+
+    </div>
 
     <script>
         var chatContainer = document.getElementById("chat-container");
@@ -41,6 +47,7 @@
             recognition.lang = 'en-US';
 
             recognition.onresult = function(event) {
+                console.log('Executing speakBotResponse function');
                 var transcript = event.results[0][0].transcript;
                 document.getElementById('user_input').value = transcript;
                 // Submit the form directly
@@ -49,15 +56,7 @@
 
             recognition.start();
         }
-        function textToSpeech(text) {
-            var utterance = new SpeechSynthesisUtterance(text);
-            speechSynthesis.speak(utterance);
-        }
 
-        // Call this function to trigger text-to-speech for the bot's response
-        function speakBotResponse(response) {
-            textToSpeech(response);
-        }
     </script>
 </body>
 </html>
