@@ -1,6 +1,7 @@
 langsmith
 langchain-community
 langchain-core
+python-dotenv==1.0.0
 curl-cffi==0.5.10 
 duckduckgo-search==4.1.1 
 lxml==4.9.4
