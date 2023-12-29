@@ -64,19 +64,21 @@ textarea:focus{border: solid 3px rgb(236, 201, 0); outline: none;}
         border: solid 2px black;
         border-radius: 3px;
         left: 29.5%;
-        height: 77%;
+        height: 83%;
     }
 
     textarea {
         left: 29%;
-
+        bottom: 0%;
     }
 
     #generate{
         right: 8%;
+        bottom: 0.5%;
     }
     #record {
         right: 3%;
+        bottom: 0.5%;
     }
     h2 {
     position: absolute;
