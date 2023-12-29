@@ -9,11 +9,12 @@ from langchain.chains.conversation.memory import ConversationBufferWindowMemory
 from langchain.chains import LLMChain
 from langchain.agents import initialize_agent, Tool, load_tools, AgentType
 from langchain.tools import DuckDuckGoSearchRun
+from dotenv import load_dotenv
 # Initialize any API keys that are needed
 import os
 from flask import Flask, render_template, request, session, flash, get_flashed_messages
 
-os.environ["HUGGINGFACEHUB_API_TOKEN"] = HUGGINGFACEHUB_API_TOKEN
+load_dotenv()
 
 ###pytts###
 # def text_to_speech(text):
