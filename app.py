@@ -14,7 +14,7 @@ from dotenv import load_dotenv
 import os
 from flask import Flask, render_template, request, session, flash, get_flashed_messages
 
-load_dotenv()
+load_dotenv(dotenv_path="HUGGINGFACEHUB_API_TOKEN.env")
 
 ###pytts###
 # def text_to_speech(text):
