@@ -37,6 +37,7 @@ app = Flask(__name__)
 app.secret_key = '123'
 
 llm = HuggingFaceHub(repo_id="mistralai/Mixtral-8x7B-Instruct-v0.1",model_kwargs={"temperature":0.1,"max_length":256})
+llm.client.api_url = 'https://api-inference.huggingface.co/models/mistralai/Mixtral-8x7B-Instruct-v0.1'
 
 search = DuckDuckGoSearchRun()
 tools = [
