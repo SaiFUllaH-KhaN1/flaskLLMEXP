@@ -1,8 +1,6 @@
 #import pyttsx3
-import soundfile as sf
 from langchain.llms import HuggingFaceHub
 from langchain.chains import ConversationChain
-import speech_recognition as sr
 
 from langchain.agents import ZeroShotAgent, Tool, AgentExecutor
 from langchain.chains.conversation.memory import ConversationBufferWindowMemory
