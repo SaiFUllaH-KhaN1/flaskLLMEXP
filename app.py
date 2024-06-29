@@ -44,11 +44,11 @@ tools = [
     Tool(
         name="DuckDuckGo Search",
         func=search.run,
-        description="Only useful when you need to do a search on the internet to answer questions about current events",
+        description="Only useful when Human asks you question about weather and current world events.",
     )
 ]
 
-prefix = """Have a conversation with a human, answering the following questions as best you can. You have access to the internet search tool:"""
+prefix = """Have a conversation with a human, answering the following questions as best you can. You have access to the internet search tool ONLY if Human asks for weather and current world events:"""
 suffix = """Begin!"
 
 Current conversation:
